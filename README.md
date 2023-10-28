@@ -49,6 +49,6 @@ While counter is less than number_of_token:
 		counter incrementation
 ```
 
-##Some improvments
+## Some improvements
 1) Adding the coordinates of the center can enhance the robot's efficiency in gathering all the tokens to that specific point.
 2) In preparation for real-world applications, the robot should prioritize gentleness when garbbing and releasing tokens. This can be done by monitoring object distances and decelerating to avoid collisions.
