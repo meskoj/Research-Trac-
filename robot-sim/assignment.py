@@ -9,7 +9,8 @@ a_th = 2.0
 d_th = 0.4
 """ float: Threshold for the control of the orientation"""
 
-grabbed = False #Boolean to know if the robot is grabbing a token
+grabbed = False
+#Boolean to know if the robot is grabbing a token
 
 R = Robot()
 """ instance of the class Robot"""
@@ -47,7 +48,7 @@ def select_nearest_token(token_id):
     """
     Function to find the nearest token not already taken before
     
-    Arg: token_id (list): list of token already brought in position
+    Arg: token_id (list): list of tokens already brought in position
     """
     dist=100
     
@@ -85,6 +86,7 @@ def go_to_token(selected_token):
 	 	if found == True and dist < 2*d_th and grabbed is True:
 			grabbed = False
 			R.release()
+			drive(-50, 0.5)
 			break
 			
 		elif found == True and dist > d_th:
@@ -103,27 +105,41 @@ def go_to_token(selected_token):
 			R.grab()
 			break
 			
-
 		else:
 			turn(20,0.5)
-			    	
-		    	
+
+
+def count_token():
+	"""
+	Function used to count the number of tokens in the arena
+	"""
+	
+	token_list = []
+	for i in range(10):
+		for token in R.see():
+			print(token.info.code)
+			if token.info.code not in token_list:
+				token_list.append(token.info.code)
+		turn(25,0.5)
+	return len(token_list)  			    			    	
 
 def main():
 
+	counter = count_token()
 	token_id = [-1] #Create the list to store the token id
-	token_id[0] = R.see()[0].info.code #saving the code of the first token where all the other will be brought
-	counter = 1
+	token_id[0] = R.see()[0].info.code #Saving the code of the first token where all the other will be brought
+	i = 1
 	
-	while counter < 6:
+	while i < counter:
 		selected_token = select_nearest_token(token_id)
 		
 		if selected_token == -1:
 			turn(20,0.5)
 		else:
-			go_to_token(selected_token)
+			go_to_token(selected_token) #Go to grab one token
 			token_id.append(selected_token)
-			go_to_token(token_id[0])
-			counter = counter + 1
+			go_to_token(token_id[0]) #Bring the token grabbed to the first token
+			i = i + 1
+
 			
 main()
