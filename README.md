@@ -2,13 +2,14 @@
 This is the script for the first assignment of the course Research Track 1 at UniGE.
 
 The goal is to let the robot brings all the tokens in the same position.
-
-In order to run the script, clone the folder, go inside it and write:
+## How to run the program
+In order to run the script, clone the folder and with the terminal go inside the folder robot-sim.
+Once there is possible to write the following command to run the script.
 
 ```bash
 $ python run.py asssignment.py
 ```
-
+## Pseudocode
 ```python
 #Set global variables
 a_th = 2.0 #threshold to control linear distance
