@@ -7,7 +7,7 @@ In order to run the script, clone the folder and with the terminal go inside the
 Once there is possible to write the following command to run the script.
 
 ```bash
-$ python run.py asssignment.py
+$ python2 run.py asssignment.py
 ```
 ## Pseudocode
 ```python
