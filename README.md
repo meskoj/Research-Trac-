@@ -18,13 +18,16 @@ grabbed = False #used to know if a token is grabbed by the robot
 
 R = Robot() #instance an object of class robot
 
-function drive(speed, seconds): this function set a linear velocity to the robot with certain speed and for x seconds
+function drive(speed, seconds): this function set a linear velocity to the robot with certain speed
+and for x seconds
 
 function turn(speed, seconds): this function is used to set an angular velocity to the robot
 
-function select_nearest_token(token_id): this function let the robot choose the nearest token in is sight not already taken before
+function select_nearest_token(token_id): this function let the robot choose the nearest token in
+is sight not already taken before
 
-function go_to_token(selected_token): this function is used to search the token selected by the previous function and to bring the robot to it.
+function go_to_token(selected_token): this function is used to search the token selected by the
+previous function and to bring the robot to it.
 
 function count_token(): this function count the number of tokens in the are
 
