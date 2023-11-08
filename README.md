@@ -1,7 +1,7 @@
 # Research Track 1: first assignment
 This is the script for the first assignment of the course Research Track 1 at UniGE.
 
-The goal is to let the robot brings all the tokens in the same position.
+In this assignment was given an arena, some tokens and a robot. The goal is to let the robot brings all the tokens in the same position.
 ## How to run the program
 In order to run the script, clone the folder and with the terminal go inside the folder robot-sim.
 Once there is possible to write the following command to run the script.
