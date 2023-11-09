@@ -1,9 +1,18 @@
 # Research Track 1: first assignment
-This is the script for the first assignment of the course Research Track 1 at UniGE.
+This is the script for the first assignment of the course Research Track 1 at the university of Genoa.
 
-In this assignment was given an arena, some tokens and a robot. The goal is to let the robot brings all the tokens in the same position.
+## Environment and goal
+The environment used in this project is a 2D playground in which is present a moving robot that can interact with some tokens positioned in the area.
+Some function, such as the one to control the motor or to see the surround tokens, have been provided with the simulator and are part of the class Robot(). While the ones used in the assignment.py have been built to accomplish the tasks.
+For more information about the environment and the class is possible to see this [repository](https://github.com/CarmineD8/python_simulator/tree/assignment23).
+
+In this case, the playground is organized in this way:
+* At the start the robot is on the top-left corner
+* There are 6 golden tokens positioned around the so called _arena_
+The final goal is to let the robot bring all the tokens to the same position.
 ## How to run the program
-In order to run the script, clone the folder and with the terminal go inside the folder robot-sim.
+The simulator requires a Python 2.7 installation, the [pygame](https://www.pygame.org) library, [PyPyBox2D](https://pypi.org/project/pypybox2d/2.1-r331/), and [PyYAML](https://pypi.org/project/PyYAML/).
+In order to run the script, clone the folder and go inside the folder robot-sim.
 Once there is possible to write the following command to run the script.
 
 ```bash
