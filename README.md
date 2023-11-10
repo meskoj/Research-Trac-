@@ -3,12 +3,12 @@ This is the script for the first assignment of the course Research Track 1 at th
 
 ## Environment and goal
 The environment used in this project is a 2D playground in which is present a moving robot that can interact with some tokens positioned in the area.
-Some function, such as the one to control the motor or to see the surround tokens, have been provided with the simulator and are part of the class Robot(). While the ones used in the assignment.py have been built to accomplish the tasks.
+Some functions, such as the one to control the motor or to see the surround tokens, have been provided with the simulator and are part of the class `Robot().` While, the ones used in the `assignment.py` have been built to accomplish the tasks.
 For more information about the environment and the class is possible to see this [repository](https://github.com/CarmineD8/python_simulator/tree/assignment23).
 
 In this case, the playground is organized in this way:
-* At the start the robot is on the top-left corner
-* There are 6 golden tokens positioned around the so called _arena_
+* At the start the robot is on the top-left corner.
+* There are 6 golden tokens positioned around the so called _arena_.
 
 The final goal is to control the robot and let him bring all the tokens to the same position.
 ## How to run the program
@@ -20,9 +20,9 @@ Once there is possible to write the following command to run the script.
 $ python2 run.py asssignment.py
 ```
 ## Code structure and functionality
-The first step is to define the constants that are used by the robot. They are:
+The first step is to define the global variables that are used by the robot. They are:
 * ```d_th```  is the distance threshold at which the robot can successfully grab a token. Adjust this threshold to control how close the robot needs to be for token grabbing.
-* ```a_th```  is the orientation threshold, it is used by the robot to know if it is well aligned with respect to the token.
+* ```a_th```  is the orientation threshold, it is used by the robot to know wheter it is well aligned with respect to the token.
 * ```grabbed``` is a boolean variable that is used to know if the robot is carrying an object. Initially, it is set to False (the robot is free) and when it grabs a token the variable becomes True.
 
 Then, two functions are used to control the robot's movements inside the playground; they are ```drive()``` and ```turn()```. In particular, the first one controls the robot's linear motion by setting the motor's velocity, 
@@ -34,9 +34,9 @@ Finally, there are two functions to select a token and take it. The first one is
 ## Pseudocode
 ```python
 #Set global variables
-a_th = 2.0 #threshold to control linear distance
-d_th = 0.4 #threshold to control orientation
-grabbed = False #used to know if a token is grabbed by the robot
+a_th = 2.0 #threshold to control the orientation
+d_th = 0.4 #threshold to control the linear threshold
+grabbed = False #used to know if the robot has grabbed a token
 
 R = Robot() #instance an object of class robot
 
@@ -51,7 +51,7 @@ is sight not already taken before
 function go_to_token(selected_token): this function is used to search the token selected by the
 previous function and to bring the robot to it.
 
-function count_token(): this function count the number of tokens in the are
+function count_token(): this function count the number of tokens in the playground
 
 Define the main function:
 
@@ -76,7 +76,7 @@ While counter is less than number_of_token:
 ```
 
 ## Some improvements
-1) The first adjustment can be done by selecting a bigger values for both the linear and the rotational speeds, to make the robot be faster in accomplish is task. The problem is that by increasing the speeds becomes difficult to control the robot finding the correct orientation and avoiding possible obstacles.
+1) The first adjustment can be done by selecting a bigger values for both the linear and the rotational speeds, to make the robot be faster in accomplish its task. The problem is that by increasing the speeds become difficult to control the robot finding the correct orientation and avoiding possible obstacles.
 2) Adding the coordinates of the center can enhance the robot's efficiency in gathering all the tokens to that specific point. Or more in general, it could be useful to implement a function, that knowing the position of each token, computes some geometric calculations finding the point that minimize the travel lenght.
-3) A big simplification is that the robot searches only for the nearest token in its sight. To greatly increase the robot performance an idea can be to scan the environment at the start and find the position of the tokens. Then it could computes the optimised path to take the tokens in the fastest way.
+3) A big simplification is that the robot searches only for the nearest token in its sight. To greatly increase the robot performance an idea can be to scan the environment at the start and find the position of the tokens. Then, it could computes the optimised path to take the tokens in the fastest way.
 4) In preparation for real-world applications, the robot should prioritize gentleness when grabbing and releasing tokens. This can be done by monitoring object distances and decelerating to avoid collisions.
