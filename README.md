@@ -9,7 +9,8 @@ For more information about the environment and the class is possible to see this
 In this case, the playground is organized in this way:
 * At the start the robot is on the top-left corner
 * There are 6 golden tokens positioned around the so called _arena_
-The final goal is to let the robot bring all the tokens to the same position.
+
+The final goal is to control the robot and let him bring all the tokens to the same position.
 ## How to run the program
 The simulator requires a Python 2.7 installation, the [pygame](https://www.pygame.org) library, [PyPyBox2D](https://pypi.org/project/pypybox2d/2.1-r331/), and [PyYAML](https://pypi.org/project/PyYAML/).
 In order to run the script, clone the folder and go inside the folder robot-sim.
@@ -18,6 +19,18 @@ Once there is possible to write the following command to run the script.
 ```bash
 $ python2 run.py asssignment.py
 ```
+## Code structure and functionality
+The first step is to define the constants that are used by the robot. They are:
+* ```d_th```  is the distance threshold at which the robot can successfully grab a token. Adjust this threshold to control how close the robot needs to be for token grabbing.
+* ```a_th```  is the orientation threshold, it is used by the robot to know if it is well aligned with respect to the token.
+* ```grabbed``` is a boolean variable that is used to know if the robot is carrying an object. Initially, it is set to False (the robot is free) and when it grabs a token the variable becomes True.
+
+Then, two functions are used to control the robot's movements inside the playground; they are ```drive()``` and ```turn()```. In particular, the first one controls the robot's linear motion by setting the motor's velocity, 
+allowing the robot to move forward or backward at a specified speed for a defined duration.
+While, the second one controls the robot's rotational motion by adjusting the motor's velocity. It enables the robot to turn around its own axis.
+Another important function to make the robot robust is the ```count_token()```. This is a vision function to let the robot performs a 360° turn and count the number of tokens in the playground. By using this function, the robot can adapt to scenarios where the number of tokens differs from the expected 6, making it versatile and capable of solving unknown problems.
+Finally, there are two functions to select a token and take it. The first one is ```select_nearest_token()```; This function enables the robot to identify and select the nearest available token within its field of view. It returns the unique identifier of the selected token. The second one is ```go_to_token()```; with this function, the robot navigates to the token that was previously selected using `select_nearest_token()`. Once at the token's location, the robot will grab the token. These two functions work together to facilitate the robot's token collection strategy.
+
 ## Pseudocode
 ```python
 #Set global variables
