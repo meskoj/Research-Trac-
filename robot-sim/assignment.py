@@ -4,13 +4,13 @@ import time
 from sr.robot import *
 
 a_th = 2.0
-""" float: Threshold for the control of the orientation"""
+#float: Threshold for the control of the orientation
 
 d_th = 0.4
-""" float: Threshold for the control of the linear distance"""
+# float: Threshold for the control of the linear distance
 
 grabbed = False
-#Boolean to know if the robot is grabbing a token
+#Boolean to know if the robot has grabbed a token
 
 R = Robot()
 """ instance of the class Robot"""
