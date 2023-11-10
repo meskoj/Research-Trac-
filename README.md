@@ -76,5 +76,7 @@ While counter is less than number_of_token:
 ```
 
 ## Some improvements
-1) Adding the coordinates of the center can enhance the robot's efficiency in gathering all the tokens to that specific point.
-2) In preparation for real-world applications, the robot should prioritize gentleness when grabbing and releasing tokens. This can be done by monitoring object distances and decelerating to avoid collisions.
+1) The first adjustment can be done by selecting a bigger values for both the linear and the rotational speeds, to make the robot be faster in accomplish is task. The problem is that by increasing the speeds becomes difficult to control the robot finding the correct orientation and avoiding possible obstacles.
+2) Adding the coordinates of the center can enhance the robot's efficiency in gathering all the tokens to that specific point. Or more in general, it could be useful to implement a function, that knowing the position of each token, computes some geometric calculations finding the point that minimize the travel lenght.
+3) A big simplification is that the robot searches only for the nearest token in its sight. To greatly increase the robot performance an idea can be to scan the environment at the start and find the position of the tokens. Then it could computes the optimised path to take the tokens in the fastest way.
+4) In preparation for real-world applications, the robot should prioritize gentleness when grabbing and releasing tokens. This can be done by monitoring object distances and decelerating to avoid collisions.
