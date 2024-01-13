@@ -1,5 +1,5 @@
 # Research Track 1: first assignment
-This is the script for the first assignment of the course Research Track 1 at the University of Genoa.
+This is the script for the first assignment of the course Research Track 1 at the University of Genoa. Made by Marco Meschini S6273938
 
 ## Environment and goal
 The environment used in this project is a 2D playground in which is present a moving robot that can interact with some tokens scattered throughout the area.
