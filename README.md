@@ -63,15 +63,15 @@ number_of_token = count_token()
 
 While counter is less than number_of_token:
 
-	Selected_token = select_nearest_token(token_id)
+	selected_token = select_nearest_token(token_id)
 	
 	If selected_token not found:
-		Turn(speed, seconds)
+		turn(speed, seconds)
 		
 	Else:
 	
-		Go_to_token(selected_token)
-		Token_id.append(selected_token) #add to the list the token id taken 
+		go_to_token(selected_token)
+		token_id.append(selected_token) #add to the list the token id taken 
 		go_to_token(token_id[0]) #go to the first saved token
 		counter incrementation
 ```
